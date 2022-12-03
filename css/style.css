@@ -1,57 +1,111 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body{
-    margin: 0;
-    padding: 0;
+    margin: 0px auto;
+    padding: 0px;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.text-offset{
+p{
+    font-size: 16px;
     font-weight: bold;
-    padding-left: 25px;
-    padding-top: 5px;
+    margin-top: 16px;
+    margin-left: 16px;
 }
 
-.header-flex{
-    background-color: #ffd900;
+.header-flexible{
+    background-color: #FFD900;
     height: 64px;
-    margin-bottom: 8px;
+    margin-bottom: 16px;
 }
 
-.main-flex{
+.main-flexible{
     display: flex;
     flex-direction: row;
-    flex: 1;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
 }
 
-.nav-flex{
-    background-color: #ffd900;
-    flex: 1 1 10%;
+.nav-flexible{
+    background-color: #FFD900;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10%;
 }
 
-.article-flex{
-    background-color: #ffd900;
-    flex: 3 3 60%;
-    margin: 0px 8px;
+.article-flexible{
+    background-color: #FFD900;
+    flex-grow: 3;
+    flex-shrink: 3;
+    flex-basis: 60%;
+    margin: 0px 16px;
 }
 
-.aside-flex{
-    background-color: #ffd900;
-    flex: 1 1 5%;
+.aside-flexible{
+    background-color: #FFD900;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 10%;
 }
 
-.footer-flex{
-    background-color: #ffd900;
+.footer-flexible{
+    background-color: #FFD900;
     height: 64px;
-    margin-top: 8px;
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 1024px){
+    .header-flexible{
+        margin-bottom: 8px;
+    }
+    .nav-flexible{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 30%;
+    }
+    
+    .article-flexible{
+        flex-grow: 3;
+        flex-shrink: 3;
+        flex-basis: 30%;
+        margin: 0px 8px;
+    }
+    
+    .aside-flexible{
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 30%;
+    }
+    .footer-flexible{
+        margin-top: 8px;
+    }
 }
 
 @media screen and (max-width: 768px){
-    .main-flex{
-        flex-direction: column;
+    p{
+        margin: 10px 15px;
     }
-    .article-flex{
-        margin: 8px 0px;
+    .main-flexible{
+        flex-direction: column;
+    } 
+    .nav-flexible{
+        flex-basis: 100px;
+        margin-bottom: 8px;
+    }
+    .article-flexible{
+        margin: 0px;
+        flex-basis: 100px;
+        margin-bottom: 8px;
+    }
+    .aside-flexible{
+        flex-basis: 100px;
     }
 }
